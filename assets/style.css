@@ -1,0 +1,498 @@
+@font-face {
+    font-family: 'ABC Monument-Grotesk Bold';
+    src: url('ABCMonumentGrotesk-Bold-Trial.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Bold Italic';
+    src: url('ABCMonumentGrotesk-BoldItalic-Trial.otf') format('opentype');
+    font-weight: 700;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Light';
+    src: url('ABCMonumentGrotesk-Light-Trial.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Light Italic';
+    src: url('ABCMonumentGrotesk-LightItalic-Trial.otf') format('opentype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Medium';
+    src: url('ABCMonumentGrotesk-Medium-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Medium Italic';
+    src: url('ABCMonumentGrotesk-MediumItalic-Trial.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Regular';
+    src: url('ABCMonumentGrotesk-Regular-Trial.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ABC Monument-Grotesk Regular Italic';
+    src: url('ABCMonumentGrotesk-RegularItalic-Trial.otf') format('opentype');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Font Base */
+body {
+    font-family: 'ABC Monument-Grotesk Medium', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Stile dell'header */
+.intestazione {
+    position: absolute; /* Posizionamento nell'angolo in alto a sinistra */
+    top: 0;
+    left: 0;
+    padding: 10px 10px;
+    background-color: #fff;
+    display: flex; /* Usa Flexbox per gestire l'allineamento */
+    align-items: flex-start; /* Allinea tutto in alto */
+    gap: 10px; /* Spaziatura tra logo e menu */
+}
+
+/* Logo */
+.logo {
+    font-size: 10px; /* Dimensione più piccola per il logo */
+    font-weight: 700; /* Medium */
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #000;
+    text-decoration: none; /* Rimuove la sottolineatura */
+    line-height: 1.4; /* Uniforma l'altezza della linea */
+    display: inline-block; /* Mantiene l'allineamento */
+}
+
+/* Menu */
+.menu {
+    font-size: 24px; /* Testo più grande per le voci del menu */
+    font-weight: 600; /* Medium */
+    color: #000;
+    line-height: 1;
+}
+
+/* Stile dei link nel menu */
+.link-menu {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: #888; /* Grigio per i link non attivi */
+    font-weight: 600; /* Medium */
+    line-height: 1; /* Uniforma l'altezza della linea */
+    display: inline-block; /* Impedisce spostamenti indesiderati */
+}
+
+/* Stile per il link attivo (pagina corrente) */
+.active {
+    text-decoration: none;
+    color: #000; /* Nero per la pagina attiva */
+}
+
+/* Hover per link */
+.link-menu:hover {
+    color: #000; /* Diventa nero al passaggio del mouse */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .intestazione {
+        flex-direction: column; /* Disposizione verticale su dispositivi piccoli */
+        align-items: flex-start; /* Allinea tutto a sinistra */
+    }
+
+    .menu {
+        margin-top: 10px; /* Spaziatura tra logo e menu */
+    }
+}
+
+
+/* Stile del testo introduttivo */
+.intro-text {
+    font-size: 24px; /* Stessa dimensione del menu */
+    font-weight: 600; /* Medium */
+    color: #000; /* Nero */
+    line-height: 1.2; /* Migliore leggibilità */
+    margin: 0px 10px; /* Margini per il distacco dall'header */
+    margin-top: calc(24px * 1.2 * 2);
+    font-family: 'ABC Monument-Grotesk Medium', sans-serif; /* Font coerente */
+}
+
+/* Stile per i pulsanti */
+.button {
+    text-decoration: none; /* Rimuove la sottolineatura */
+    color: #000;
+    font-weight: 600; /* Medium */
+    font-size: 24px; /* Dimensione leggermente più piccola del testo principale */
+    line-height: 1.2; /* Uniforma l'interlinea */
+    display: inline-block; /* Per evitare che i pulsanti occupino l'intera larghezza */
+    transition: color 0.3s; /* Effetto di transizione */
+}
+
+/* Hover per i pulsanti */
+.button:hover {
+    color: #888; /* Nero al passaggio del mouse */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Filtri */
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.2em 10px;
+}
+
+
+
+.filter {
+    font-size: 24px; /* Stessa dimensione del menu */
+    font-weight: 600; /* Medium */
+    color: #888; /* Grigio chiaro */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    border: none; /* Rimuove i bordi */
+    background: none; /* Rimuove lo sfondo */
+    padding: 0; /* Rimuove padding predefinito */
+    padding-right: 0.3em; /* Simula uno spazio alla fine */
+    cursor: pointer;
+    transition: color 0.3s; /* Effetto di transizione */
+}
+
+.filter:hover {
+    color: #000; /* Nero al passaggio del mouse */
+}
+
+.filter.active {
+    color: #000; /* Nero per il filtro attivo */
+}
+
+/* Elementi HTML */
+.html-elements {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 5px;
+}
+
+.element {
+    font-size: 24px; /* Stessa dimensione del menu */
+    font-weight: 600; /* Medium */
+    color: #888; /* Grigio chiaro */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    border: none; /* Rimuove i bordi */
+    background: none; /* Rimuove lo sfondo */
+    padding: 0; /* Rimuove padding predefinito */
+    padding-right: 0.3em; /* Simula uno spazio alla fine */
+    cursor: pointer;
+    transition: color 0.3s; /* Effetto di transizione */
+}
+/* Colori vivaci per le categorie quando attive */
+.element.tags.active {
+    color: #00bfff; /* Azzurro brillante */
+}
+
+.element.attributes.active {
+    color: #c2af02; /* Giallo intenso */
+}
+
+.element.forms.active {
+    color: #8bc34a; /* Verde lime */
+}
+
+.element.global.active {
+    color: #e91e63; /* Fucsia acceso */
+}
+
+.element.lists.active {
+    color: #ff9800; /* Arancione vivo */
+}
+
+.element.media.active {
+    color: #2196f3; /* Blu elettrico */
+}
+
+.element.meta-resources.active {
+    color: #ff4081; /* Magenta forte */
+}
+
+.element.semantic.active {
+    color: #f44336; /* Rosso fuoco */
+}
+
+.element.structural.active {
+    color: #ff4081; /* Rosa neon */
+}
+
+.element.tables.active {
+    color: #9c27b0; /* Viola brillante */
+}
+
+.element.text.active {
+    color: #4caf50; /* Verde acqua */
+}
+
+/* Elementi inattivi */
+.element.inactive {
+    color: #ddd; /* Grigio chiaro */
+    pointer-events: auto; /* Mantieni i bottoni cliccabili */
+}
+
+/* Transizione morbida */
+.element {
+    transition: color 0.3s ease;
+}
+
+/* Effetto hover per tutti gli elementi */
+.element:hover {
+    color: #000 !important; /* Nero al passaggio del mouse con priorità massima */
+    transition: color 0.3s ease; /* Transizione fluida */
+}
+
+
+.projects-list .element:nth-child(1):hover, /* Primo bottone */
+.projects-list .element:nth-child(2):hover, /* Secondo bottone */
+.projects-list .element:nth-child(3):hover { /* Terzo bottone */
+    color: red !important; /* Cambia il colore del testo in rosso */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Stile della sezione dei dettagli */
+.details-section {
+    margin-top: 50px;
+    padding-left: 10px;
+    background-color: #f9f9f9; /* Colore chiaro di sfondo */
+    border: 1px solid #ddd; /* Bordo leggero */
+    border-radius: 5px; /* Arrotondamento degli angoli */
+    display: none; /* Nascosta di default */
+    transition: opacity 0.3s ease; /* Transizione fluida */
+    font-family: 'ABC Monument-Grotesk Medium', sans-serif; /* Font coerente */
+    font-size: 24px; /* Dimensione coerente */
+    font-weight: 600; /* Medium */
+    color: #000; /* Testo nero */
+    line-height: 1.2; /* Migliora leggibilità */
+}
+
+/* Titolo della sezione */
+#details-title {
+    display: none;
+    font-size: 28px; /* Più grande del testo normale */
+    font-weight: bold; /* Grassetto */
+    color: #000; /* Colore del titolo */
+    text-transform: uppercase; /* Maiuscolo per uniformità */
+    letter-spacing: 1px; /* Aggiunge un tocco tipografico */
+}
+
+/* Testo della sezione */
+#details-text {
+    font-size: 24px; /* Dimensione coerente con il resto del testo */
+    font-weight: 600; /* Medium */
+    color: #000000; /* Grigio scuro */
+    line-height: 1.2; /* Migliora leggibilità */
+    margin: 0; /* Rimuove margini predefiniti */
+}
+
+
+p {
+    margin-top: 45px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Elementi CSS */
+.css-elements {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 10px;
+}
+
+.css-element {
+    font-size: 24px;
+    font-weight: 600;
+    color: #888;
+    text-decoration: none;
+    border: none;
+    background: none;
+    padding: 0;
+    padding-right: 0.3em;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Colori vivaci per le categorie attive */
+.css-element.typography-active,
+.filter.typography-active {
+    color: #ff5722; /* Arancione */
+}
+
+.css-element.animations-active,
+.filter.animations-active {
+    color: #9c27b0; /* Viola */
+}
+
+.css-element.backgrounds-active,
+.filter.backgrounds-active {
+    color: #2196f3; /* Blu */
+}
+
+.css-element.borders-active,
+.filter.borders-active {
+    color: #4caf50; /* Verde */
+}
+
+.css-element.box-model-active,
+.filter.box-model-active {
+    color: #ffc107; /* Giallo */
+}
+
+.css-element.colors-active,
+.filter.colors-active {
+    color: #e91e63; /* Fucsia */
+}
+
+.css-element.flexbox-active,
+.filter.flexbox-active {
+    color: #00bcd4; /* Azzurro */
+}
+
+.css-element.grid-active,
+.filter.grid-active {
+    color: #8bc34a; /* Verde lime */
+}
+
+.css-element.positioning-active,
+.filter.positioning-active {
+    color: #ff9800; /* Arancione chiaro */
+}
+
+.css-element.dimensions-active,
+.filter.dimensions-active {
+    color: #795548; /* Marrone */
+}
+
+.css-element.margins-active,
+.filter.margins-active {
+    color: #673ab7; /* Viola scuro */
+}
+
+.css-element.paddings-active,
+.filter.paddings-active {
+    color: #009688; /* Verde acqua */
+}
+
+.css-element.tables-active,
+.filter.tables-active {
+    color: #3f51b5; /* Blu scuro */
+}
+
+.css-element.transitions-active,
+.filter.transitions-active {
+    color: #607d8b; /* Grigio bluastro */
+}
+
+.css-element.visibility-active,
+.filter.visibility-active {
+    color: #cddc39; /* Verde lime chiaro */
+}
+
+.css-element.media-active,
+.filter.media-active {
+    color: #ff5722; /* Arancione */
+}
+
+.css-element:hover {
+    color: #000 !important; /* Nero al passaggio del mouse con priorità massima */
+    transition: color 0.3s ease; /* Transizione fluida */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.projects-list {
+    margin-top: 1.6em;
+    margin-left: 10px; /* Gutter esterno a sinistra */
+}
+
+.projects-list {
+    display: flex;
+    flex-wrap: wrap; /* Spazio tra i pulsanti */
+  }
+  
+  .projects-list .element::after {
+    content: " /"; /* Aggiunge il separatore "/" */
+    color: #888; /* Colore del separatore */
+  }
+  
+  .projects-list .element:last-child::after {
+    content: ""; /* Rimuove il separatore dall'ultimo pulsante */
+  }
+  

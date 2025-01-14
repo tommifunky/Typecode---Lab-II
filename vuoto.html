@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Cornice Vuota - Poster">
+  <title>Typecode - Cornice Vuota</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Stile base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Layout principale */
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Area poster */
+    .poster-view {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      border-right: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #fff; /* Cornice bianca */
+    }
+
+    /* Area codice */
+    .code-editor {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: #ffffff;
+    }
+
+    textarea {
+      flex: 1;
+      width: 100%;
+      font-family: monospace;
+      font-size: 14px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: space-between; /* Spaziatura tra i pulsanti */
+      align-items: center; /* Allinea verticalmente */
+      margin-top: 10px; /* Aggiunge uno spazio sopra i pulsanti */
+    }
+
+    button {
+      font-family: 'ABC Monument-Grotesk Medium', sans-serif;
+      font-size: 24px;
+      font-weight: 600;
+      color: #888;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      padding: 0;
+      transition: color 0.3s;
+    }
+
+    button:hover {
+      color: #000;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header class="intestazione">
+    <a href="index.html" class="logo">TYPECODE</a>
+    <span class="menu">
+      <a href="index.html" class="link-menu">Homepage</a>, 
+      <a href="abouthtml.html" class="link-menu">About HTML</a>, 
+      <a href="aboutcss.html" class="link-menu">About CSS</a>, 
+      <a href="projects.html" class="active">Projects</a>
+    </span>
+  </header>
+  <div class="container">
+    <!-- Visualizzazione della cornice vuota -->
+    <div class="poster-view">
+      <iframe id="poster-preview"></iframe>
+    </div>
+    <!-- Editor del codice -->
+    <div class="code-editor">
+        <textarea id="html-code" placeholder="Modifica il codice HTML qui"></textarea>
+        <textarea id="css-code" placeholder="Modifica il codice CSS qui"></textarea>
+        <div class="button-container">
+          <button onclick="saveCode()">Salva Codice</button>
+          <button onclick="updatePoster()">Aggiorna Poster</button>
+        </div>
+      </div>
+  </div>
+
+  <script>
+    // Codice iniziale HTML e CSS
+    const initialHTML = `
+      <div class="cornice">
+        <!-- Inizia a costruire il poster qui -->
+      </div>
+    `;
+
+    const initialCSS = `
+    /*NON MODIFICARE IL BODY*/
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #ffffff;
+      }
+
+      .cornice {
+        width: 450px;
+        height: 636px;
+        background-color: #ffffff; /* Cornice bianca */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid #ddd; /* Bordo leggero */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    `;
+
+    // Inizializza gli editor con il codice iniziale
+    document.getElementById('html-code').value = initialHTML;
+    document.getElementById('css-code').value = initialCSS;
+
+    // Funzione per aggiornare il poster
+    function updatePoster() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = `<style>${document.getElementById('css-code').value}</style>`;
+      const iframe = document.getElementById('poster-preview');
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write(cssCode + htmlCode);
+      doc.close();
+    }
+
+    // Carica il poster iniziale (cornice vuota)
+    updatePoster();
+
+    // Funzione per salvare il codice
+    function saveCode() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = document.getElementById('css-code').value;
+
+      // Salva il codice HTML
+      const htmlBlob = new Blob([htmlCode], { type: 'text/html' });
+      const htmlUrl = URL.createObjectURL(htmlBlob);
+      const htmlLink = document.createElement('a');
+      htmlLink.href = htmlUrl;
+      htmlLink.download = 'poster.html';
+      htmlLink.click();
+
+      // Salva il codice CSS
+      const cssBlob = new Blob([cssCode], { type: 'text/css' });
+      const cssUrl = URL.createObjectURL(cssBlob);
+      const cssLink = document.createElement('a');
+      cssLink.href = cssUrl;
+      cssLink.download = 'poster.css';
+      cssLink.click();
+    }
+  </script>
+</body>
+</html>

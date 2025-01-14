@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AboutCSS - Typecode">
+  <title>Typecode - AboutCSS</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/scriptcss.js"></script>
+</head>
+<body>
+  <header class="intestazione">
+    <a href="index.html" class="logo">TYPECODE</a>
+    <span class="menu">
+      <a href="index.html" class="link-menu">Homepage</a>,  
+      <a href="abouthtml.html" class="link-menu">About HTML,</a>
+      <a href="aboutcss.html" class="active">About CSS,</a>
+      <a href="projects.html" class="link-menu">Projects</a>
+    </span>
+</header>
+<main>
+  <p class="intro-text">
+    CSS (Cascading Style Sheets) è il linguaggio utilizzato per definire lo stile e l'aspetto delle pagine web.<br>
+    Permette di applicare colori, layout, tipografia e molte altre proprietà agli elementi HTML,<br>
+    separando la struttura dal design. Con CSS, è possibile creare layout reattivi che si adattano<br>
+    a diversi dispositivi e risoluzioni. L'ultima versione, CSS3, introduce potenti funzionalità<br>
+    come animazioni, trasformazioni e transizioni, ampliando notevolmente le possibilità creative.<br><br>
+    Qui puoi esplorare le principali proprietà e regole CSS, suddivise per categorie.<br>
+    Usa i filtri per trovare rapidamente ciò che cerchi.
+  </p>
+
+  <!-- Filtri -->
+  <div class="filters">
+    <button class="filter" data-filter="typography">Tipografia,</button>
+    <button class="filter" data-filter="animations">Animazioni,</button>
+    <button class="filter" data-filter="backgrounds">Sfondi,</button>
+    <button class="filter" data-filter="borders">Bordi,</button>
+    <button class="filter" data-filter="box-model">Box Model,</button>
+    <button class="filter" data-filter="colors">Colori,</button>
+    <button class="filter" data-filter="flexbox">Flexbox,</button>
+    <button class="filter" data-filter="grid">Griglia,</button>
+    <button class="filter" data-filter="positioning">Posizionamento,</button>
+    <button class="filter" data-filter="dimensions">Dimensioni,</button>
+    <button class="filter" data-filter="margins">Margini,</button>
+    <button class="filter" data-filter="paddings">Padding,</button>
+    <button class="filter" data-filter="tables">Tabelle,</button>
+    <button class="filter" data-filter="transitions">Transizioni,</button>
+    <button class="filter" data-filter="visibility">Visibilità,</button>
+    <button class="filter" data-filter="media">Media,</button>
+  </div>
+
+
+  <!-- Lista di elementi -->
+  <div class="css-elements">
+    <button class="css-element" data-categories="visibility">"align-content",</button>
+    <button class="css-element" data-categories="flexbox">"align-items",</button>
+    <button class="css-element" data-categories="typography">"align-self",</button>
+    <button class="css-element" data-categories="animations">"animation",</button>
+    <button class="css-element" data-categories="animations">"animation-delay",</button>
+    <button class="css-element" data-categories="animations">"animation-duration",</button>
+    <button class="css-element" data-categories="media">"backdrop-filter",</button>
+    <button class="css-element" data-categories="backgrounds">"background",</button>
+    <button class="css-element" data-categories="backgrounds">"background-color",</button>
+    <button class="css-element" data-categories="backgrounds">"background-image",</button>
+    <button class="css-element" data-categories="backgrounds">"background-position",</button>
+    <button class="css-element" data-categories="backgrounds">"background-repeat",</button>
+    <button class="css-element" data-categories="backgrounds">"background-size",</button>
+    <button class="css-element" data-categories="borders">"border",</button>
+    <button class="css-element" data-categories="tables">"border-collapse",</button>
+    <button class="css-element" data-categories="borders">"border-color",</button>
+    <button class="css-element" data-categories="borders">"border-radius",</button>
+    <button class="css-element" data-categories="tables">"border-spacing",</button>
+    <button class="css-element" data-categories="borders">"border-style",</button>
+    <button class="css-element" data-categories="tables">"border-width",</button>
+    <button class="css-element" data-categories="box-model">"box-shadow",</button>
+    <button class="css-element" data-categories="box-model">"box-sizing",</button>
+    <button class="css-element" data-categories="positioning">"bottom",</button>
+    <button class="css-element" data-categories="visibility">"clip-path",</button>
+    <button class="css-element" data-categories="colors">"color",</button>
+    <button class="css-element" data-categories="media">"cursor",</button>
+    <button class="css-element" data-categories="flexbox">"display: flex",</button>
+    <button class="css-element" data-categories="grid">"display: grid",</button>
+    <button class="css-element" data-categories="media">"filter",</button>
+    <button class="css-element" data-categories="flexbox">"flex-direction",</button>
+    <button class="css-element" data-categories="flexbox">"flex-wrap",</button>
+    <button class="css-element" data-categories="typography">"font-family",</button>
+    <button class="css-element" data-categories="typography">"font-size",</button>
+    <button class="css-element" data-categories="typography">"font-style",</button>
+    <button class="css-element" data-categories="typography">"font-weight",</button>
+    <button class="css-element" data-categories="grid">"gap",</button>
+    <button class="css-element" data-categories="grid">"grid-template-columns",</button>
+    <button class="css-element" data-categories="grid">"grid-template-rows",</button>
+    <button class="css-element" data-categories="dimensions">"height",</button>
+    <button class="css-element" data-categories="typography">"letter-spacing",</button>
+    <button class="css-element" data-categories="typography">"line-height",</button>
+    <button class="css-element" data-categories="dimensions">"max-height",</button>
+    <button class="css-element" data-categories="dimensions">"max-width",</button>
+    <button class="css-element" data-categories="margins">"margin",</button>
+    <button class="css-element" data-categories="margins">"margin-bottom",</button>
+    <button class="css-element" data-categories="margins">"margin-left",</button>
+    <button class="css-element" data-categories="margins">"margin-right",</button>
+    <button class="css-element" data-categories="margins">"margin-top",</button>
+    <button class="css-element" data-categories="dimensions">"min-height",</button>
+    <button class="css-element" data-categories="dimensions">"min-width",</button>
+    <button class="css-element" data-categories="media">"opacity",</button>
+    <button class="css-element" data-categories="visibility">"overflow",</button>
+    <button class="css-element" data-categories="paddings">"padding",</button>
+    <button class="css-element" data-categories="paddings">"padding-bottom",</button>
+    <button class="css-element" data-categories="paddings">"padding-left",</button>
+    <button class="css-element" data-categories="paddings">"padding-right",</button>
+    <button class="css-element" data-categories="paddings">"padding-top",</button>
+    <button class="css-element" data-categories="positioning">"position",</button>
+    <button class="css-element" data-categories="positioning">"right",</button>
+    <button class="css-element" data-categories="positioning">"top",</button>
+    <button class="css-element" data-categories="transitions">"transition",</button>
+    <button class="css-element" data-categories="transitions">"transition-delay",</button>
+    <button class="css-element" data-categories="transitions">"transition-duration",</button>
+    <button class="css-element" data-categories="transitions">"transition-property",</button>
+    <button class="css-element" data-categories="transitions">"transition-timing-function",</button>
+    <button class="css-element" data-categories="typography">"text-align",</button>
+    <button class="css-element" data-categories="typography">"text-decoration",</button>
+    <button class="css-element" data-categories="typography">"text-transform",</button>
+    <button class="css-element" data-categories="visibility">"visibility",</button>
+    <button class="css-element" data-categories="dimensions">"width",</button>
+    <button class="css-element" data-categories="positioning">"z-index",</button>
+  </div>
+
+  <div id="details" class="details-section" style="display: none; opacity: 0;">
+    <div id="details-text">
+        <!-- Qui verranno visualizzati i dettagli -->
+    </div>
+</div>
+  
+</main>
+</body>
+</html>

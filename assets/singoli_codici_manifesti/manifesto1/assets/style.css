@@ -1,0 +1,94 @@
+@font-face {
+  font-family: 'Akzidenz-Grotesk Bold';
+  src: url('assets/fonts/AkzidenzGroteskBE-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akzidenz-Grotesk Medium';
+  src: url('assets/fonts/AkzidenzGroteskBE-Md.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Akzidenz-Grotesk Regular';
+  src: url('assets/fonts/AkzidenzGroteskBE-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+  
+.cornice {
+  width: 450px; 
+  height: 636px; 
+  background-color: #000000; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+  overflow: hidden; 
+}
+  
+.manifesto {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0); 
+  position: relative; /* Per contenere gli elementi sovrapposti */
+}
+
+.testo_sopra {
+  font-family: 'Akzidenz-Grotesk Regular', sans-serif;
+  color: #c60000;
+  text-align: justify;
+  padding-left: 128px;
+  font-size: 12px;
+  line-height: 1.1em;
+}
+
+.testo_sotto {
+  font-family: 'Akzidenz-Grotesk Regular', sans-serif;
+  color: #c60000;
+  text-align: justify;
+  padding-left: 128px;
+  padding-top: 42px;
+  font-size: 12px;
+  line-height: 1.1em;
+  padding-top: 295px;
+}
+
+.testo_grande {
+  font-family: 'Akzidenz-Grotesk Bold', sans-serif;
+  font-weight: bold;
+  position: relative; /* Necessario per posizionare i figli */
+  color: #ffffff;
+  padding-left: 128px;
+  top: 300px; 
+  font-size: 165px;
+}
+  
+.testo_grande .der {
+  position: absolute;
+  left: -20px;
+  top: 0;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: -0.05em;
+}
+
+.testo_grande .film {
+  color: #ffffff; 
+  margin-left: -13px;
+  letter-spacing: -0.01em;
+}
+  
+  

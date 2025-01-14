@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Juni-festwochen Zürich - Poster">
+  <title>Typecode - Juni-festwochen Zürich</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <style>
+    /* Stile base */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    /* Layout principale */
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Area poster */
+    .poster-view {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #f0f0f0;
+      border-right: 1px solid #ddd;
+      padding: 10px;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      background: #000;
+    }
+
+    /* Area codice */
+    .code-editor {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 10px;
+      background-color: #ffffff;
+    }
+
+    textarea {
+      flex: 1;
+      width: 100%;
+      font-family: monospace;
+      font-size: 14px;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      resize: none;
+    }
+
+    .button-container {
+  display: flex;
+  justify-content: space-between; /* Spaziatura tra i pulsanti */
+  align-items: center; /* Allinea verticalmente */
+  margin-top: 10px; /* Aggiunge uno spazio sopra i pulsanti */
+}
+
+button {
+  font-family: 'ABC Monument-Grotesk Medium', sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  transition: color 0.3s;
+}
+
+button:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+  </style>
+</head>
+<body>
+  <header class="intestazione">
+    <a href="index.html" class="logo">TYPECODE</a>
+    <span class="menu">
+      <a href="index.html" class="link-menu">Homepage</a>, 
+      <a href="abouthtml.html" class="link-menu">About HTML</a>, 
+      <a href="aboutcss.html" class="link-menu">About CSS</a>, 
+      <a href="projects.html" class="active">Projects</a>
+    </span>
+  </header>
+  <div class="container">
+    <!-- Visualizzazione del poster -->
+    <div class="poster-view">
+      <iframe id="poster-preview"></iframe>
+    </div>
+    <!-- Editor del codice -->
+    <div class="code-editor">
+        <textarea id="html-code" placeholder="Modifica il codice HTML qui"></textarea>
+        <textarea id="css-code" placeholder="Modifica il codice CSS qui"></textarea>
+        <div class="button-container">
+          <button onclick="saveCode()">Salva Codice</button>
+          <button onclick="updatePoster()">Aggiorna Poster</button>
+        </div>
+      </div>
+  </div>
+
+  <script>
+    // Codice iniziale HTML e CSS
+    const initialHTML = `
+      <div class="cornice">
+    <div class="manifesto">
+
+      <div class="testo_piccolo">
+        <p>carl</p><br><p>maria</p><br><p>katharina</p><br><p>josef</p><br><p>otto</p>
+      </div>
+
+      <div class="testo_grande">
+        <p>schuricht</p><br><p>stader</p><br><p>marti</p><br><p>traxel</p><br><p>von rohr</p><br><p>beethoven</p><br><p>neunte sinfonie</p>
+      </div>
+
+      <div class="testo_sotto_sx">
+        <p><br><br><br><br><br><br><br><br> 4. junifestkonzert</p>
+      </div>
+
+      <div class="testo_sotto_dx">
+        <p>juni-festwochen zürich<br>1957<br><br>tonhalle grosser saal<br>dienstag 2. juli 20.15 uhr<br>mittwoch 3. juli 20.15 uhr<br>1957<br>tonhallegesellschaft zürich<br>leitung carl schuricht<br>solisten<br>maria stader sopran<br>katharina marti alt<br>josef traxel tenor<br>otto von rohr bass<br>gemischter chor zürich<br>beethoven<br>neunte sinfonie in d-moll<br>op. 125<br><br>karten fr. 5.50 bis 16.50<br>tonhallekasse hug jecklin<br>kuoni</p>
+
+      </div>
+
+      <div class="rettangolo1"></div>
+      <div class="rettangolo2"></div>
+      <div class="rettangolo3"></div>
+      <div class="rettangolo4"></div>
+      <div class="rettangolo5"></div>
+
+    </div>
+  </div>
+    `;
+
+    const initialCSS = `
+      @font-face {
+    font-family: 'Akzidenz-Grotesk Regular';
+    src: url('assets/fonts/AkzidenzGroteskBE-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+  
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ffffff;
+}
+    
+.cornice {
+    width: 450px; /* Riduzione proporzionale (scalata) */
+    height: 636px; /* Altezza proporzionale */
+    background-color: #ffffff; 
+    display: flex;
+    border: 1px solid #ddd;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5); 
+    overflow: hidden; /* Nasconde tutto ciò che esce dai bordi */
+    }
+    
+.manifesto {
+    position: relative;
+    width: 100%; /* Area interna per il contenuto */
+    height: 100%;
+    background-color: rgb(255, 255, 255); /* Colore del contenuto */
+    position: relative; /* Per contenere gli elementi sovrapposti */
+}
+  
+.testo_piccolo {
+    position: absolute;
+    font-size: 10px;
+    font-family: 'Akzidenz-Grotesk Regular', sans-serif;
+    color: #000000;
+    text-align: right;
+    padding-top: 203px;
+    padding-left: 40px;
+    line-height: 0.98em;
+    z-index: 2;
+    
+}
+  
+.testo_grande {
+    position: absolute;
+    font-size: 20px;
+    font-family: 'Akzidenz-Grotesk Regular', sans-serif;
+    color: #000000;
+    text-align: left;
+    padding-top: 200px;
+    padding-left: 90px;
+    line-height: 0.5em;
+    z-index: 2;
+}
+
+p {
+    margin: 0px;
+}
+
+.testo_sotto_sx {
+    position: absolute;
+    font-family: 'Akzidenz-Grotesk Regular', sans-serif;
+    color: #000000;
+    font-size: 10px;
+    z-index: 2;
+    padding-top: 385px;
+    line-height: 1.12;
+    padding-left: 6px;
+}
+
+.testo_sotto_dx {
+    position: absolute;
+    font-family: 'Akzidenz-Grotesk Regular', sans-serif;
+    color: #000000;
+    font-size: 10px;
+    z-index: 2;
+    padding-top: 385px;
+    padding-left: 90px;
+    line-height: 1.12;
+}
+
+.rettangolo1 {
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    width: 230px; 
+    height: 380px; 
+    background-color: #ef9d20; 
+    z-index: 1;
+}
+
+.rettangolo2 {
+    position: absolute; 
+    top: 150px; 
+    left: 231px; 
+    width: 113px; 
+    height: 377px; 
+    background-color: #ef9d20; 
+}
+
+.rettangolo3 {
+    position: absolute; 
+    top: 255px; 
+    left: 345px; 
+    width: 55px; 
+    height: 400px; 
+    background-color: #ef9d20; 
+}
+
+.rettangolo4 {
+    position: absolute; 
+    top: 98px; 
+    left: 401px; 
+    width: 28px; 
+    height: 380px; 
+    background-color: #ef9d20; 
+}
+
+.rettangolo5 {
+    position: absolute; 
+    top: 0px; 
+    left: 430px; 
+    width: 28px; 
+    height: 380px; 
+    background-color: #ef9d20; 
+}
+    `;
+
+    // Inizializza gli editor con il codice iniziale
+    document.getElementById('html-code').value = initialHTML;
+    document.getElementById('css-code').value = initialCSS;
+
+    // Funzione per aggiornare il poster
+    function updatePoster() {
+      const htmlCode = document.getElementById('html-code').value;
+      const cssCode = `<style>${document.getElementById('css-code').value}</style>`;
+      const iframe = document.getElementById('poster-preview');
+      const doc = iframe.contentDocument || iframe.contentWindow.document;
+      doc.open();
+      doc.write(cssCode + htmlCode);
+      doc.close();
+    }
+
+    // Carica il poster iniziale
+    updatePoster();
+
+    function saveCode() {
+  const htmlCode = document.getElementById('html-code').value;
+  const cssCode = document.getElementById('css-code').value;
+
+  // Salva il codice HTML
+  const htmlBlob = new Blob([htmlCode], { type: 'text/html' });
+  const htmlUrl = URL.createObjectURL(htmlBlob);
+  const htmlLink = document.createElement('a');
+  htmlLink.href = htmlUrl;
+  htmlLink.download = 'poster.html';
+  htmlLink.click();
+
+  // Salva il codice CSS
+  const cssBlob = new Blob([cssCode], { type: 'text/css' });
+  const cssUrl = URL.createObjectURL(cssBlob);
+  const cssLink = document.createElement('a');
+  cssLink.href = cssUrl;
+  cssLink.download = 'poster.css';
+  cssLink.click();
+}
+
+  </script>
+</body>
+</html>

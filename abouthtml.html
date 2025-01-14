@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AboutHTML - Typecode">
+  <title>Typecode - AboutHTML</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/scripthtml.js"></script>
+</head>
+<body>
+  <header class="intestazione">
+    <a href="index.html" class="logo">TYPECODE</a>
+    <span class="menu">
+      <a href="index.html" class="link-menu">Homepage</a>, 
+      <a href="abouthtml.html" class="active">About HTML,</a>
+      <a href="aboutcss.html" class="link-menu">About CSS,</a>
+      <a href="projects.html" class="link-menu">Projects</a> 
+    </span>
+</header>
+<main>
+  <p class="intro-text">
+    HTML (HyperText Markup Language) è il linguaggio standard per creare e strutturare pagine web.<br>
+    Utilizza "tag" per definire gli elementi della pagina, come titoli, paragrafi, immagini e link, fornendo una struttura <br>organizzata e gerarchica.
+    Ogni documento HTML segue uno schema che include elementi come &lt;head&gt; <br> per i metadati e &lt;body&gt; per il contenuto visibile.
+    Compatibile con tutti i browser, HTML è in continua evoluzione <br>(l'ultima versione è HTML5) per supportare funzionalità moderne come video, grafica e applicazioni interattive, <br>rendendolo la base fondamentale per la creazione del web.
+    <br><br>
+    Qui puoi esplorare i principali tag ed attributi HTML, suddivisi per categorie. <br>
+    Usa i filtri per trovare rapidamente ciò che cerchi.
+
+  </p>
+
+  <!-- Filtri -->
+  <div class="filters">
+    <button class="filter" data-filter="tags">&lt;tag&gt;,</button>
+    <button class="filter" data-filter="attributes">"attributi",</button>
+    <button class="filter" data-filter="forms">Form e Input,</button>
+    <button class="filter" data-filter="global">Globali,</button>
+    <button class="filter" data-filter="lists">Liste,</button>
+    <button class="filter" data-filter="media">Media,</button>
+    <button class="filter" data-filter="meta-resources">Meta e Risorse,</button>
+    <button class="filter" data-filter="semantic">Struttura Semantica,</button>
+    <button class="filter" data-filter="structural">Strutturali,</button>
+    <button class="filter" data-filter="tables">Tabelle,</button>
+    <button class="filter" data-filter="text">Titoli e Testo</button>
+  </div>
+
+  <!-- Lista di elementi -->
+  <div class="html-elements">
+    <div class="html-elements">
+      <button class="element" data-categories="tags,links">&lt;a&gt;</button>
+      <button class="element" data-categories="attributes,forms">"accept"</button>
+      <button class="element" data-categories="attributes,forms">"accept-charset"</button>
+      <button class="element" data-categories="attributes,global">"accesskey"</button>
+      <button class="element" data-categories="tags,text">&lt;abbr&gt;</button>
+      <button class="element" data-categories="attributes,forms">"action"</button>
+      <button class="element" data-categories="attributes,media">"alt"</button>
+      <button class="element" data-categories="attributes,global">"async"</button>
+      <button class="element" data-categories="tags,media">&lt;area&gt;</button>
+      <button class="element" data-categories="attributes,forms">"autofocus"</button>
+      <button class="element" data-categories="attributes,media">"autoplay"</button>
+      <button class="element" data-categories="tags,media">&lt;audio&gt;</button>
+      <button class="element" data-categories="attributes,global">"autocapitalize"</button>
+      <button class="element" data-categories="attributes,global">"autocorrect"</button>
+      <button class="element" data-categories="tags,text">&lt;b&gt;</button>
+      <button class="element" data-categories="tags,meta-resources">&lt;base&gt;</button>
+      <button class="element" data-categories="tags,semantic">&lt;bdi&gt;</button>
+      <button class="element" data-categories="tags,semantic">&lt;bdo&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;blockquote&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;body&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;br&gt;</button>
+      <button class="element" data-categories="tags,forms">&lt;button&gt;</button>
+      <button class="element" data-categories="tags,media">&lt;canvas&gt;</button>
+      <button class="element" data-categories="attributes,meta-resources">&lt;caption&gt;</button>
+      <button class="element" data-categories="attributes,global">"charset"</button>
+      <button class="element" data-categories="tags,text">&lt;cite&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;code&gt;</button>
+      <button class="element" data-categories="tags,tables">&lt;col&gt;</button>
+      <button class="element" data-categories="tags,tables">&lt;colgroup&gt;</button>
+      <button class="element" data-categories="tags,semantic">&lt;data&gt;</button>
+      <button class="element" data-categories="tags,forms">&lt;datalist&gt;</button>
+      <button class="element" data-categories="tags,lists">&lt;dd&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;del&gt;</button>
+      <button class="element" data-categories="attributes,forms">"default"</button>
+      <button class="element" data-categories="attributes,media">"defer"</button>
+      <button class="element" data-categories="attributes,global">"dir"</button>
+      <button class="element" data-categories="attributes,global">"dirname"</button>
+      <button class="element" data-categories="attributes,forms">"disabled"</button>
+      <button class="element" data-categories="attributes,media">"download"</button>
+      <button class="element" data-categories="tags,structural">&lt;div&gt;</button>
+      <button class="element" data-categories="tags,lists">&lt;dl&gt;</button>
+      <button class="element" data-categories="attributes,global">"draggable"</button>
+      <button class="element" data-categories="tags,media">&lt;embed&gt;</button>
+      <button class="element" data-categories="tags,semantic">&lt;em&gt;</button>
+      <button class="element" data-categories="attributes,forms">"enctype"</button>
+      <button class="element" data-categories="attributes,forms">"for"</button>
+      <button class="element" data-categories="tags,forms">&lt;fieldset&gt;</button>
+      <button class="element" data-categories="attributes,forms">"form"</button>
+      <button class="element" data-categories="attributes,forms">"formaction"</button>
+      <button class="element" data-categories="attributes,forms">"formenctype"</button>
+      <button class="element" data-categories="attributes,forms">"formmethod"</button>
+      <button class="element" data-categories="attributes,forms">"formnovalidate"</button>
+      <button class="element" data-categories="attributes,forms">"formtarget"</button>
+      <button class="element" data-categories="tags,structural">&lt;footer&gt;</button>
+      <button class="element" data-categories="attributes,media">"height"</button>
+      <button class="element" data-categories="tags,text">&lt;h1&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;h2&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;h3&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;h4&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;h5&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;h6&gt;</button>
+      <button class="element" data-categories="tags,meta-resources">&lt;head&gt;</button>
+      <button class="element" data-categories="attributes,global">"hidden"</button>
+      <button class="element" data-categories="tags,structural">&lt;hr&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;html&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;i&gt;</button>
+      <button class="element" data-categories="attributes,global">"id"</button>
+      <button class="element" data-categories="attributes,media">"integrity"</button>
+      <button class="element" data-categories="tags,media">&lt;iframe&gt;</button>
+      <button class="element" data-categories="tags,media">&lt;img&gt;</button>
+      <button class="element" data-categories="attributes,global">"ismap"</button>
+      <button class="element" data-categories="tags,forms">&lt;input&gt;</button>
+      <button class="element" data-categories="tags,media">&lt;kbd&gt;</button>
+      <button class="element" data-categories="attributes,media">"kind"</button>
+      <button class="element" data-categories="tags,forms">&lt;label&gt;</button>
+      <button class="element" data-categories="tags,forms">&lt;legend&gt;</button>
+      <button class="element" data-categories="attributes,global">"lang"</button>
+      <button class="element" data-categories="tags,meta-resources">&lt;link&gt;</button>
+      <button class="element" data-categories="tags,lists">&lt;li&gt;</button>
+      <button class="element" data-categories="attributes,forms">"list"</button>
+      <button class="element" data-categories="tags,structural">&lt;main&gt;</button>
+      <button class="element" data-categories="tags,media">&lt;map&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;mark&gt;</button>
+      <button class="element" data-categories="attributes,forms">"max"</button>
+      <button class="element" data-categories="tags,structural">&lt;menu&gt;</button>
+      <button class="element" data-categories="attributes,media">"media"</button>
+      <button class="element" data-categories="tags,meta">&lt;meta&gt;</button>
+      <button class="element" data-categories="attributes,forms">"min"</button>
+      <button class="element" data-categories="attributes,forms">"multiple"</button>
+      <button class="element" data-categories="tags,structural">&lt;noscript&gt;</button>
+      <button class="element" data-categories="attributes,media">"muted"</button>
+      <button class="element" data-categories="tags,semantic">&lt;nav&gt;</button>
+      <button class="element" data-categories="attributes,global">"name"</button>
+      <button class="element" data-categories="attributes,forms">"novalidate"</button>
+      <button class="element" data-categories="tags,media">&lt;object&gt;</button>
+      <button class="element" data-categories="attributes,forms">"onchange"</button>
+      <button class="element" data-categories="tags,forms">&lt;option&gt;</button>
+      <button class="element" data-categories="tags,forms">&lt;optgroup&gt;</button>
+      <button class="element" data-categories="tags,forms">&lt;output&gt;</button>
+      <button class="element" data-categories="attributes,forms">"open"</button>
+      <button class="element" data-categories="tags,media">&lt;param&gt;</button>
+      <button class="element" data-categories="attributes,forms">"placeholder"</button>
+      <button class="element" data-categories="tags,media">&lt;picture&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;p&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;pre&gt;</button>
+      <button class="element" data-categories="tags,structural">&lt;progress&gt;</button>
+      <button class="element" data-categories="attributes,forms">"readonly"</button>
+      <button class="element" data-categories="attributes,global">"rel"</button>
+      <button class="element" data-categories="tags,text">&lt;s&gt;</button>
+      <button class="element" data-categories="attributes,forms">"scope"</button>
+      <button class="element" data-categories="tags,semantic">&lt;section&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;small&gt;</button>
+      <button class="element" data-categories="attributes,global">"spellcheck"</button>
+      <button class="element" data-categories="tags,media">&lt;source&gt;</button>
+      <button class="element" data-categories="attributes,media">"src"</button>
+      <button class="element" data-categories="attributes,media">"srcdoc"</button>
+      <button class="element" data-categories="attributes,media">"srcset"</button>
+      <button class="element" data-categories="attributes,media">"srclang"</button>
+      <button class="element" data-categories="tags,text">&lt;span&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;strong&gt;</button>
+      <button class="element" data-categories="attributes,global">"style"</button>
+      <button class="element" data-categories="attributes,media">"sizes"</button>
+      <button class="element" data-categories="attributes,forms">"step"</button>
+      <button class="element" data-categories="attributes,global">"summary"</button>
+      <button class="element" data-categories="attributes,forms">"tabindex"</button>
+      <button class="element" data-categories="tags,tables">&lt;table&gt;</button>
+      <button class="element" data-categories="tags,tables">&lt;tbody&gt;</button>
+      <button class="element" data-categories="attributes,forms">"target"</button>
+      <button class="element" data-categories="tags,tables">&lt;td&gt;</button>
+      <button class="element" data-categories="tags,tables">&lt;th&gt;</button>
+      <button class="element" data-categories="tags,tables">&lt;thead&gt;</button>
+      <button class="element" data-categories="tags,forms">&lt;textarea&gt;</button>
+      <button class="element" data-categories="tags,tables">&lt;tfoot&gt;</button>
+      <button class="element" data-categories="tags,text">&lt;time&gt;</button>
+      <button class="element" data-categories="attributes,global">"title"</button>
+      <button class="element" data-categories="tags,tables">&lt;tr&gt;</button>
+      <button class="element" data-categories="tags,media">&lt;track&gt;</button>
+      <button class="element" data-categories="attributes,global">"translate"</button>
+      <button class="element" data-categories="tags,lists">&lt;ul&gt;</button>
+      <button class="element" data-categories="attributes,media">"usemap"</button>
+      <button class="element" data-categories="tags,text">&lt;var&gt;</button>
+      <button class="element" data-categories="tags,media">&lt;video&gt;</button>
+      <button class="element" data-categories="attributes,forms">"value"</button>
+      <button class="element" data-categories="tags,text">&lt;wbr&gt;</button>
+      <button class="element" data-categories="attributes,media">"width"</button>
+  </div>
+  </div>
+  <div id="details" class="details-section">
+    <h2 id="details-title">Dettagli</h2>
+    <div id="details-text">
+      <!-- Qui verranno aggiunti i dettagli dell'elemento -->
+    </div>
+  </div>
+  
+</main>
+</body>
+</html>
